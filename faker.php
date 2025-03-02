@@ -1,13 +1,27 @@
 <?php
 require_once 'vendor/autoload.php';
 
+$host = 'localhost';
+$db = 'phil_dbase';
+$user = 'root';
+$password = 'root';
+
+$connection = new mysqli($host, $user, $password, $db);
+
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}  else {
+    echo "Connected successfully";
+}
+
 $faker = Faker\Factory::create('en_PH');
+
 
 for ($i = 0; $i < 200; $i++) {
     $lastName = $faker->lastName;
     $firstName = $faker->firstName;
     $office_id = $faker->numberBetween($min = 1, $max = 200);
-    $city = $faker->city;
+    $address = $faker->city;
 
 }
 
