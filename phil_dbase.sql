@@ -25,14 +25,14 @@ DROP TABLE IF EXISTS `employee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `employee` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `employee_id` int NOT NULL AUTO_INCREMENT,
   `lastname` varchar(100) DEFAULT NULL,
   `firstname` varchar(100) DEFAULT NULL,
   `office_id` int DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`employee_id`),
   KEY `office_id` (`office_id`),
-  CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`office_id`) REFERENCES `office` (`id`)
+  CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`office_id`) REFERENCES `office` (`office_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -53,7 +53,7 @@ DROP TABLE IF EXISTS `office`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `office` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `office_id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `contactnum` varchar(15) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE `office` (
   `city` varchar(100) DEFAULT NULL,
   `country` varchar(100) DEFAULT NULL,
   `postal` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`office_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -92,8 +92,8 @@ CREATE TABLE `transaction` (
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`),
   KEY `office_id` (`office_id`),
-  CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`),
-  CONSTRAINT `transaction_ibfk_2` FOREIGN KEY (`office_id`) REFERENCES `office` (`id`)
+  CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`),
+  CONSTRAINT `transaction_ibfk_2` FOREIGN KEY (`office_id`) REFERENCES `office` (`office_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
