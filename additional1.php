@@ -34,7 +34,7 @@ for ($i=0; $i<5; $i++){
     <table class="table table-bordered table-striped">
         <tr>
             <th>Full Name</th>
-            <th>Email</th>
+            <th>Email Address</th>
             <th>Phone Number</th>
             <th>Address</th>
             <th>Birthday</th>
