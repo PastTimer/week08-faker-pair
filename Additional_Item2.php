@@ -33,4 +33,22 @@ echo "<th>Publication Year</th>";
 echo "<th>ISBN</th>";
 echo "<th>Summary</th>";
 echo "</tr>";
+
+for each ($books as $book) {
+    echo "<tr>";
+    echo "<td>";
+$book['Title'] . "</td>";
+    echo "<td>" .
+$book['Author'] . "</td>";
+echo "<td>" .
+$book['Genre'] . "</td>";
+echo "<td>" .
+$book['Publication Year'] . "</td>";
+echo "<td>" .
+$book['ISBN'] . "</td>";
+echo "<td>" .
+$book['Summary'] . "...</td>";
+echo "</tr>"
+}
+echo "</table>"
 ?>
