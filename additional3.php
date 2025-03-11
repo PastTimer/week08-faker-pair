@@ -7,13 +7,19 @@ $users = [];
 
 
 for ($i=0; $i<10; $i++){
+        $user_id = $faker->uuid;
+        $name = $faker->name;
+        $email = $faker->email;
+        $username = strtolower(explode('@', $email)[0]);
+        $password = hash('sha256', $faker->password);
+        $acc_created_on = $faker->dateTimeBetween('-2 years', 'now')-> format('Y-m-d H:i:s');
     $users[] = [
-        'user_id' => $faker->uuid,
-        'name' => $faker->name,
-        'email' =>
-        'username' =>
-        'password' => $faker->password,
-        'acc_created_on' => $faker->dateTimeBetween('-2 years', 'now')-> format('Y-m-d H:i:s')
+        'user_id' => $user_id,
+        'name' => $name,
+        'email' => $email,
+        'username' => $username,
+        'password' => $password,
+        'acc_created_on'=> $acc_created_on
     ];
 }
 
@@ -28,7 +34,7 @@ for ($i=0; $i<10; $i++){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container mt-5">
-    <h2 class="mb-4">Fake Random </h2>
+    <h2 class="mb-4">Fake Random Users</h2>
     <table class="table table-bordered table-striped">
         <tr>
             <th>User ID</th>
