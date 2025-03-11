@@ -24,4 +24,13 @@ $books = [ 'Title' => $faker->words(3, true),
         ];
         $books[] = $book;
 }
+echo "table border='1'";
+echo "<tr>";
+echo "<th>Title</th>";
+echo "<th>Author</th>";
+echo "<th>Genre</th>";
+echo "<th>Publication Year</th>";
+echo "<th>ISBN</th>";
+echo "<th>Summary</th>";
+echo "</tr>";
 ?>
